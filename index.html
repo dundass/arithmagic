@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8"><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arithmagic</title>
+
+    <link rel="stylesheet" href="arithmagic-328-twinkl-buttons.css">
+<!--    <link rel="stylesheet" href="/css/animate.min.css">-->
+    <link rel="stylesheet" href="arithmagic-329-game-ui.css">
+    <link rel="stylesheet" href="arithmagic-330-arithmagic.css">
+    
+    <script src="arithmagic-1-parallax.min.js"></script>
+    <script src="arithmagic-2-createjs-2015.11.26.min.js"></script>
+    <script src="arithmagic-3-howler.min.js"></script>
+    <script src="arithmagic-4-sketch.js"></script>
+    <script src="arithmagic-5-jquery-1.12.4.js"></script>
+    <script src="arithmagic-6-jquery-ui.js"></script>
+    <script src="arithmagic-7-vue.js"></script>
+    <script src="arithmagic-8-utils.js"></script>
+    <script src="arithmagic-9-maths-generators.js"></script>
+    <script src="arithmagic-10-vue-interactives.js"></script>
+    <script src="arithmagic-11-vue-mixins.js"></script>
+    <script src="arithmagic-12-animations.js"></script>
+    <script src="arithmagic-13-dungeon.js"></script>
+
+    <script src="arithmagic-322-manifest-inline-script.js"></script>
+
+    <script src="arithmagic-323-manifest-inline-script.js"></script>
+
+</head>
+<body onload="init()">
+
+<div id="container" class="interactive-theme-magic">
+
+    <jodal v-if="stage === 'instructions'" :visible="stage === 'instructions'" :closeable="false" :playable="true" :title="helpContent.instructions.title" :class="stage" :background-url="manifest.scroll.src" v-on:play="showChars">
+        <div v-html="helpContent.instructions.text"></div>
+    </jodal>
+
+    <div class="parallax-group" id="parallax-group">
+        <div data-depth="0.1" class="main-screen backgrounded cover" v-show="stage === 'title' || stage === 'instructions' || stage === 'stats'" :style="{ 'background-image': 'url(' + (stage === 'stats' ? manifest[currentBackground+'_bg'].src : manifest.semi_corrupt_bg.src) +')' }">
+            <canvas v-show="stage !== 'stats'" id="title-stage-bg" width="1920" height="1080"></canvas>
+        </div>
+        <div data-depth="0.2" class="main-screen backgrounded cover" v-show="stage === 'title' || stage === 'instructions' || stage === 'stats'" :style="{ 'background-image': 'url(' + (stage === 'stats' ? manifest[currentBackground+'_mid'].src : manifest.semi_corrupt_mid.src) +')' }">
+            <canvas v-show="stage !== 'stats'" id="title-stage-mg" width="1920" height="1080"></canvas>
+        </div>
+        <div data-depth="0.3" class="main-screen backgrounded cover" v-show="stage === 'title' || stage === 'instructions' || stage === 'stats'" :style="{ 'background-image': 'url(' + (stage === 'stats' ? manifest[currentBackground+'_fg'].src : manifest.semi_corrupt_fg.src) +')' }">
+            <canvas v-show="stage !== 'stats'" id="title-stage-fg" width="1920" height="1080"></canvas>
+            <div class="main-screen backgrounded" :style="{ 'background-image': 'url(' + manifest['dead_' + currentCharacter.key].src + ')' }" v-if="stage === 'stats' && currentBackground === 'corrupt'"></div>
+        </div>
+    </div>
+
+    <div class="main-screen title" id="titleHolder" v-show="stage === 'title'">
+        <div class="main-screen leaves-frame">
+            <span class="leaf-swayer" v-for="(leaf, idx) in leaves" :style="{ 'left': (idx * 14) + '%' }">
+                <span class="leaf no-select backgrounded" :style="{'animation-delay': (Math.sin(idx)*6) + 's', 'background-image': 'url(' + manifest[leaf.id].src + ')'}"> </span>
+            </span>
+        </div>
+        <span class="introText no-select">Arithmagic</span>
+        <div id="lets-go-button" class="text-button central visible titleBtn" v-on:click="letsgo">Let's Go!</div>
+        <img :src="manifest.logo.src" class="title-logo">
+    </div>
+
+    <div class="main-screen instructions" v-show="stage === 'instructions'">
+
+    </div>
+
+    <div class="main-screen character-chooser flex-vert-center" id="character-chooser" v-show="stage === 'choose-character'" :style="{ 'background-image': 'url(' + manifest.semi_corrupt_bg.src + ')' }">
+        <div class="character-panel backgrounded" :style="{ 'background-image': 'url(' + manifest.characterSelect.src + ')' }">
+            <div class="character-holder">
+                <div class="dungeon-char-bubble backgrounded" v-for="character in characters" :style="{ 'background-image': 'url(' + manifest.characterPlate.src + ')' }" :class="{ 'glowing': character === selectedCharacter }" v-on:click="selectCharacter(character)">
+                    <div class="dungeon-char-inner backgrounded" :style="{'background-image': 'url(' + character.src + ')'}"></div>
+                </div>
+            </div>
+            <div class="char-name no-select" v-if="selectedCharacter">{{ selectedCharacter.fluff }}</div>
+            <div class="char-text no-select" v-html="selectedCharacter ? selectedCharacter.lore : 'Each character has a special ability. Click or tap them to find out more!'"></div>
+            <div class="char-play backgrounded" v-if="selectedCharacter" v-on:click="chooseCharacter(selectedCharacter)" :style="{'background-image': 'url(' + manifest.characterPlayButton.src + ')'}"></div>
+        </div>
+        <div class="main-screen char-select-empty" v-show="!selectedCharacter" :style="{ 'background-image': 'url(' + manifest.emptyCharacterPlate.src + ')' }"></div>
+        <canvas class="no-events" id="char-select-canvas" width="1920" height="1080"></canvas>
+    </div>
+
+    <div class="main-screen backgrounded cover" id="dungeon-map-screen" v-show="stage === 'map'" :style="{ 'background-image': 'url(' + manifest.map.src + ')' }">
+        <div class="main-screen dungeon-back-colour" :class="{ dimmed: mapDimmed }"></div>
+        <div class="main-screen dungeon-map-clouds" :style="{ 'background-image': 'url(' + manifest.map_clouds.src + ')' }"></div>
+        <div class="dungeon-map-bubble backgrounded" v-for="(level, name) in levels" :class="[name, { 'bubble-character-size': playerStats[name].conqueredBy.length > 0 }]" :style="{ 'background-image': 'url(' + (playerStats[name].conqueredBy.length > 0 ? manifest['map_icon_' + playerStats[name].conqueredBy].src : manifest['map_icon_' + name].src) + ')'}" v-on:click="selectLevel(level)"></div>
+        <jodal v-if="selectedLevel !== null" :visible="selectedLevel !== null" :title="selectedLevel.name" :playable="true" :closeable="true" :background-url="manifest.scroll.src" v-on:play="chooseLevel(selectedLevel.key, false)" v-on:close="selectedLevel = null">
+            <div>{{ selectedLevel.lore }}</div>
+        </jodal>
+    </div>
+
+    <div class="main-screen" id="dungeon-gameHolder" v-show="stage === 'main'" :class="{ 'zoomed': zoomed, 'inverted': timePaused }" v-on:click="hideDialogueBanner">
+
+        <div class="main-screen dungeon-back backgrounded cover" v-if="currentLevel" :style="{ 'background-image': 'url(' + currentLevel.src + ')'}"></div>
+        <div class="dungeon-back-dimmer main-screen"></div>
+
+        <canvas class="no-events" id="character-canvas" width="1920" height="1080"></canvas>
+
+        <div class="main-screen backgrounded cover dungeon-fore no-events" v-if="currentLevel" :style="{ 'background-image': 'url(' + currentLevel.fore_src + ')'}"></div>
+
+        <div class="dungeon-player-health">
+            <div class="player-health-inner" :style="{ 'width': (playerStats.hp * 100 / playerStats.hpMax) + '%' }"></div>
+        </div>
+        <div class="hp-text player no-select backgrounded" :style="{ 'background-image': 'url(' + manifest.playerHealth.src + ')' }">
+<!--            <span>Courage: {{ Math.ceil(playerStats.hp) }}</span>-->
+        </div>
+        <div class="dungeon-name-text player-name-text no-select" v-if="currentCharacter">{{ currentCharacter.fluff }}</div>
+        <div class="dungeon-name-text enemy-name-text no-select" v-if="currentEnemy">{{ currentEnemy.enemyName }}</div>
+
+        <div class="dungeon-stress backgrounded" id="dungeon-stress" :style="{ 'background-image': 'url(' + manifest.stress.src + ')'}"></div>
+
+        <div class="dungeon-spell-picker" :class="{ 'expanded': spellPickerExpanded }">
+            <div v-for="(op, spellType) in operatorMap" v-on:click="spellSelected(spellType)" :class="spellType" class="dungeon-bubble dungeon-spell-bubble no-select">
+                <img class="no-select" :src="manifest['res_'+spellType].src">
+            </div>
+        </div>
+
+        <div class="dungeon-level-picker" :class="{ 'expanded': levelPickerExpanded }">
+            <div v-for="difficulty in ['easy', 'medium', 'hard']" v-on:click="channelSpell(difficulty)" :style="{ 'background-image': 'url(' + manifest['spell_' + currentSpellType + '_easy'].src + ')'}" :class="difficulty" class="dungeon-bubble difficulty backgrounded">
+                <div class="difficulty-text flex-vert-center">
+                    <span class="difficulty-text-inner">{{ getContentDescription(difficulty) }}</span>
+                </div>
+            </div>
+            <span class="font-button prev spell-back-btn" id="prev-palette" v-on:click="backToSpells"><span class="path1 theme-colour"></span><span class="path2"></span></span>
+        </div>
+
+        <div class="dungeon-player-health enemy">
+            <div class="player-health-inner" :style="{ 'width': (enemyStats.hp * 100 / enemyStats.hpMax) + '%' }"></div>
+        </div>
+        <div class="hp-text enemy enemy-HP no-select backgrounded" :style="{ 'background-image': 'url(' + manifest.enemyHealth.src + ')' }">
+<!--            <span>{{ Math.ceil(enemyStats.hp) }}</span>-->
+        </div>
+
+        <div class="dungeon-friend backgrounded" id="best-friend"></div>
+        <div class="dungeon-spell-impact backgrounded no-select" id="dungeon-spell-impact"></div>
+        <div class="dungeon-spell-body" id="dungeon-spell-body"></div>
+        <div class="dungeon-spell-damage no-select" id="dungeon-spell-damage"><span>-10</span></div>
+
+        <div class="dungeon-weakness-icon backgrounded weak" v-if="currentEnemy" :style="{ 'opacity': playerStats.weaknessDiscovered ? 1 : 0, 'background-image': 'url(' + manifest['weak_' + currentEnemy.weakness].src + ')' }"></div>
+        <div class="dungeon-weakness-icon backgrounded resist" v-if="currentEnemy" :style="{ 'opacity': playerStats.resistanceDiscovered ? 1 : 0, 'background-image': 'url(' + manifest['res_' + currentEnemy.resistance].src + ')' }"></div>
+
+        <div class="dungeon-progress-tracker backgrounded" v-if="currentLevel" :style="{ 'background-image': 'url(' + manifest.progress_bar.src + ')'}">
+<!--            <div class="dungeon-progress-arrows backgrounded" :style="{ 'left': [2, 12.75, 23.5, 36.25, 49, 59.75, 70.25, 85.75][playerStats[currentLevel.key].victories] + '%', 'background-image': 'url(' + manifest.progress_arrows.src + ')'}"></div>-->
+            <div class="dungeon-progress-dot" v-for="(pos, idx) in [1.5, 12.5, 23.65, 34.25, 50.25, 61.5, 72.5, 83.75]" :class="{ 'progress-filled': playerStats[currentLevel.key].victories >= idx, 'progress-current': playerStats[currentLevel.key].victories === idx }" :style="{ 'left': pos + '%' }"></div>
+            <div class="dungeon-progress-miniboss backgrounded" :style="{ 'background-image': 'url(' + manifest.progress_skull_miniboss.src + ')' }"></div>
+            <div class="dungeon-progress-boss backgrounded" :style="{ 'background-image': 'url(' + manifest.progress_skull_boss.src + ')' }"></div>
+        </div>
+
+        <div class="dialogue-banner backgrounded" v-if="currentLevel" :class="{ 'dialogue-open': dialogueOpen }" :style="{'background-image': 'url(' + manifest['banner_'+currentLevel.key].src + ')'}">
+            <div class="dialogue-banner-text no-select">{{ bossDialogue }}</div>
+        </div>
+
+    </div>
+
+    <canvas v-show="(stage === 'stats' && allLevelsComplete) || stage === 'happiness'" id="victory-canvas" width="1920" height="1080"></canvas>
+
+    <div class="main-screen dungeon-back backgrounded cover" v-show="stage === 'happiness'" :style="{ 'background-image': 'url(' + (currentLevel ? currentLevel.src : '') + ')'}">
+        <div class="dungeon-friend friend-happy backgrounded" v-for="n in 10" :style="{ 'animation-delay': (n/5) + 's', 'background-image': 'url(' + manifest['friend_' + Math.floor(1 + (Math.random() * 8))].src + ')' }"></div>
+    </div>
+
+    <div class="dungeon-ability" id="dungeon-ability" v-on:click="useAbility"></div>
+
+    <div class="dungeon-spell-timer" v-show="stage === 'main' && casting">
+        <div class="spell-timer-inner" :style="{ width: castingTime + '%' }"></div>
+    </div>
+
+    <div class="dungeon-all-maths backgrounded" :class="{ 'incorrect-shake': mathsBoxShaking, 'all-maths-visible': casting, 'character-question-ability': isQuestionAbility }" :style="{ 'background-image': 'url(' + manifest[isQuestionAbility ? 'calculatorBackAbility' : 'calculatorBack'].src + ')'}">
+        <div class="dungeon-maths-holder question-area"><span class="dungeon-maths-text" v-html="question.question"></span></div>
+        <div class="dungeon-maths-holder input-area">
+            <input id="theText" v-model="userInput" class="dungeon-maths-input" type="number" value="">
+        </div>
+<!--        <ipad-keypad v-on:keypad-backspace="keypadBackspace" v-on:keypad-number="keypadPress" v-on:keypad-enter="checkAnswer"></ipad-keypad>-->
+        <div class="ipad-keypad">
+            <div class="keypad-btn backgrounded no-select" v-for="key in [1,2,3,4,5,6,7,8,9]" v-on:click="keypadPress(Number(key))" :style="{ 'background-image': 'url(' + manifest['key_' + key].src + ')' }"></div>
+            <div class="keypad-btn backgrounded no-select" v-on:mousedown="keypadBackspace" :style="{ 'background-image': 'url(' + manifest.key_back.src + ')' }"></div>
+            <div class="keypad-btn backgrounded no-select" v-on:mousedown="keypadPress(0)" :style="{ 'background-image': 'url(' + manifest.key_zero.src + ')' }"></div>
+            <div class="keypad-btn backgrounded no-select" v-on:mousedown="checkAnswer" :style="{ 'background-image': 'url(' + manifest.key_enter.src + ')' }"></div>
+        </div>
+        <div class="dungeon-spell-info"><span class="spell-power-text">Spell strength: {{ Math.round(getStat('spellPower')) }}</span></div>
+        <div class="dungeon-question-ability backgrounded" v-on:click="useAbility" v-if="isQuestionAbility" :style="{ 'background-image': 'url(' + manifest[currentCharacter.questionAbility].src + ')' }" :class="{ 'ability-used': abilityUsed }"></div>
+    </div>
+
+    <div class="main-screen" id="dungeon-particle-holder"></div>
+
+    <div class="main-screen backgrounded" id="dungeon-end-screen" v-if="stage === 'stats'" :class="{ 'final-end-screen': allLevelsComplete }" :style="{ 'background-image': 'url(' + (allLevelsComplete ? manifest.final_bg.src : '') + ')' }">
+        <div class="dungeon-end-stats backgrounded" :style="{ 'background-image': 'url(' + manifest.scroll.src + ')' }" v-if="currentLevel">
+            <span class="victory-text">{{ victoryText }}</span>
+            <ul class="stats-holder">
+                <li class="stat-questions">Questions answered correctly: {{ getLocationStat('questionsCorrect') }}</li>
+                <li class="stat-spells">Spells cast: {{ getLocationStat('spellsCast') }}</li>
+                <li class="stat-power">Most powerful spell: {{ Math.round(getLocationStat('mostPowerfulSpell')) }}</li>
+                <li class="stat-weakness">Super effective spells used: {{ getLocationStat('superEffectiveSpells') }}</li>
+            </ul>
+            <span class="end-score">
+                <span>Final Score: </span>
+                <span class="end-score-number">{{ Math.round(getLocationStat('questionsCorrect') + getLocationStat('spellsCast') + getLocationStat('mostPowerfulSpell') + getLocationStat('superEffectiveSpells')) }}</span>
+            </span>
+            <span class="font-button close" v-if="allLevelsComplete" v-on:click="currentLevel = null"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+            <div class="text-button central visible" v-on:click="playAgain">Play Again</div>
+        </div>
+        <div class="main-screen victory-trumpets no-events" :class="{ 'trumpets-sounding': trumpetsSounding }">
+            <div class="victory-trumpet backgrounded" v-for="n in 4" :class="[(n % 2 === 1 ? 'left' : 'right'), (n < 3 ? 'top' : 'bottom')]" :style="{ 'background-image': 'url(' + manifest['trumpet'+n].src + ')' }"></div>
+        </div>
+        <div class="main-screen dungeon-final-end-screen-fore backgrounded" v-if="allLevelsComplete" :style="{ 'background-image': 'url(' + manifest.final_fg.src + ')' }">
+            <div class="dungeon-final-end-screen-areas">
+                <div class="dungeon-final-end-screen-bubble backgrounded" v-for="levelName in ['castle', 'flowers', 'cave', 'forest_dark']" v-on:click="currentLevel = levels[levelName]" :style="{ 'background-image': 'url(' + manifest['map_icon_' + levelName].src + ')' }"></div>
+            </div>
+            <div class="dungeon-final-end-screen-areas">
+                <div class="dungeon-final-end-screen-bubble backgrounded" v-for="levelName in ['bridge', 'clouds', 'forest_light', 'desert']" v-on:click="currentLevel = levels[levelName]" :style="{ 'background-image': 'url(' + manifest['map_icon_' + levelName].src + ')' }"></div>
+            </div>
+        </div>
+        <div class="main-screen no-events" v-if="allLevelsComplete || (currentLevel !== null && getLocationStat('conqueredBy').length > 0)">
+            <div class="confetti" v-for="n in 30" :style="{ 'left': ((n*n) % 100) + '%', 'animation-delay': (Math.sin(n)*10) + 's', 'animation-duration': (7 + Math.sin(n) * 4) + 's' }"></div>
+        </div>
+    </div>
+
+    <pause-menu v-show="stage === 'map' || stage === 'main' || stage === 'happiness'" v-on:close="contextualClose" v-on:pause="helping = false" :close-text="'Go back'" :has-volume="false" :has-fullscreen="false" :auto-pause="false" :background-url="manifest.scroll.src" :class="{ 'helping-no-buttons': helping }" :options="[{ icon: 'help', text: 'Help', handler: toggleHelp }]">
+        <template v-slot:extra>
+            <jodal v-if="helping" :visible="helping" :closeable="true" :playable="false" :title="helpContent[stage].title" :class="stage" v-on:close="helping = false">
+                <div v-html="helpContent[stage].text"></div>
+            </jodal>
+        </template>
+    </pause-menu>
+
+    <ingame-sidebar-bottom></ingame-sidebar-bottom>
+
+    <div v-show="stage !== 'title'" class="go-burn-container">
+        <img id="go-burn" :src="manifest.burn.src">
+    </div>
+
+</div>
+
+<div id="preload-div" class="loading">
+    <span style="display: inline-block; height: 100%; vertical-align: middle;"></span>
+    <img src="arithmagic-327-twinkl_preloader.gif" style="vertical-align: middle; max-height: 100%">
+</div>
+
+</body>
+</html>

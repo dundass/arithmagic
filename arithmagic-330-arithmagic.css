@@ -1,0 +1,2515 @@
+/*
+	Typography mixin
+ */
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block; }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details,
+menu {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block; }
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none; }
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none; }
+
+/* Make sizing uniform */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+/* Text colours */
+.text-white {
+  color: #FFF; }
+
+.text-black {
+  color: #1c1c1c; }
+
+.text-violet {
+  color: #7868ac; }
+
+.text-violet-light {
+  color: #9d9ccd; }
+
+.text-violet-dark {
+  color: #653c8f; }
+
+.text-violet-strong {
+  color: #653c8f; }
+
+.text-violet-strong-light {
+  color: #7868ac; }
+
+.text-violet-strong-dark {
+  color: #4a3582; }
+
+.text-purple {
+  color: #a873af; }
+
+.text-purple-light {
+  color: #cfb6d9; }
+
+.text-purple-dark {
+  color: #8c368c; }
+
+.text-purple-strong {
+  color: #8c368c; }
+
+.text-purple-strong-light {
+  color: #a873af; }
+
+.text-purple-strong-dark {
+  color: #65186a; }
+
+.text-orchid {
+  color: #d47db2; }
+
+.text-orchid-light {
+  color: #eebcd8; }
+
+.text-orchid-dark {
+  color: #cb4793; }
+
+.text-orchid-strong {
+  color: #cb4793; }
+
+.text-orchid-strong-light {
+  color: #d47db2; }
+
+.text-orchid-strong-dark {
+  color: #ca075b; }
+
+.text-pink {
+  color: #f067ab; }
+
+.text-pink-light {
+  color: #eebcd8; }
+
+.text-pink-dark {
+  color: #e6007e; }
+
+.text-magenta {
+  color: #ea516b; }
+
+.text-magenta-light {
+  color: #f9cbca; }
+
+.text-magenta-dark {
+  color: #e50050; }
+
+.text-rose-red {
+  color: #ed6c76; }
+
+.text-rose-red-light {
+  color: #f39ca2; }
+
+.text-rose-red-dark {
+  color: #d72233; }
+
+.text-rose-red-strong {
+  color: #d72233; }
+
+.text-rose-red-strong-light {
+  color: #ed6c76; }
+
+.text-rose-red-strong-dark {
+  color: #bf0a2a; }
+
+.text-red {
+  color: #BF0A2A; }
+
+.text-red-light {
+  color: #f8c4bf; }
+
+.text-red-dark {
+  color: #e52721; }
+
+.text-orange {
+  color: #f1894c; }
+
+.text-orange-light {
+  color: #f9bd95; }
+
+.text-orange-dark {
+  color: #f0821a; }
+
+.text-orange-strong {
+  color: #f0821a; }
+
+.text-orange-strong-light {
+  color: #f1894c; }
+
+.text-orange-strong-dark {
+  color: #e94e14; }
+
+.text-gold {
+  color: #e8c500; }
+
+.text-gold-light {
+  color: #fdd183; }
+
+.text-gold-dark {
+  color: #f9b000; }
+
+.text-yellow {
+  color: #ffe864; }
+
+.text-yellow-light {
+  color: #ffedaa; }
+
+.text-yellow-dark {
+  color: #e5c800; }
+
+.text-lime-green {
+  color: #b9d36e; }
+
+.text-lime-green-light {
+  color: #cfe09b; }
+
+.text-lime-green-dark {
+  color: #699329; }
+
+.text-green {
+  color: #6fbc85; }
+
+.text-green-light {
+  color: #c1dfc4; }
+
+.text-green-dark {
+  color: #009640; }
+
+.text-green-strong {
+  color: #009640; }
+
+.text-green-strong-light {
+  color: #6fbc85; }
+
+.text-green-strong-dark {
+  color: #003f16; }
+
+.text-sea-green {
+  color: #6c9d72; }
+
+.text-sea-green-light {
+  color: #bbd1bf; }
+
+.text-sea-green-dark {
+  color: #00743a; }
+
+.text-sea-green-strong {
+  color: #00743a; }
+
+.text-sea-green-strong-light {
+  color: #6c9d72; }
+
+.text-sea-green-strong-dark {
+  color: #005722; }
+
+.text-teal {
+  color: #31b7bc; }
+
+.text-teal-light {
+  color: #8acbc1; }
+
+.text-teal-dark {
+  color: #009386; }
+
+.text-blue {
+  color: #4eb2e5; }
+
+.text-blue-light {
+  color: #afdff9; }
+
+.text-blue-dark {
+  color: #00a7e7; }
+
+.text-blue-strong {
+  color: #00a7e7; }
+
+.text-blue-strong-light {
+  color: #4eb2e5; }
+
+.text-blue-strong-dark {
+  color: #0076b0; }
+
+.text-logo-blue {
+  color: #00b3f0; }
+
+.text-logo-blue-light {
+  color: #0bc1ff; }
+
+.text-logo-blue-dark {
+  color: #4eb2e5; }
+
+.text-steel-blue {
+  color: #007ac3; }
+
+.text-steel-blue-light {
+  color: #91c8e5; }
+
+.text-steel-blue-dark {
+  color: #00649c; }
+
+.text-steel-blue-dark {
+  color: #00649c; }
+
+.text-steel-blue-dark-light {
+  color: #007ac3; }
+
+.text-steel-blue-dark-dark {
+  color: #003f7d; }
+
+.text-gray-darkest {
+  color: #494949; }
+
+.text-gray-dark {
+  color: #898989; }
+
+.text-gray {
+  color: #b9b9b9; }
+
+.text-gray-light {
+  color: #c9c9c9; }
+
+.text-gray-lighter {
+  color: #e5e5e5; }
+
+.text-gray-lightest {
+  color: #f3f1f1; }
+
+/* Title underline colours */
+/* Background colours */
+.bg-white {
+  background-color: #FFF; }
+
+.bg-black {
+  background-color: #1c1c1c; }
+
+.bg-green-strong {
+  background-color: #003f16; }
+
+.bg-violet {
+  background-color: #7868ac;
+  border-color: #7868ac; }
+
+.bg-violet-light {
+  background-color: #9d9ccd;
+  border-color: #9d9ccd; }
+
+.bg-violet-dark {
+  background-color: #653c8f;
+  border-color: #653c8f; }
+
+.bg-violet-strong {
+  background-color: #653c8f;
+  border-color: #653c8f; }
+
+.bg-violet-strong-light {
+  background-color: #7868ac;
+  border-color: #7868ac; }
+
+.bg-violet-strong-dark {
+  background-color: #4a3582;
+  border-color: #4a3582; }
+
+.bg-purple {
+  background-color: #a873af;
+  border-color: #a873af; }
+
+.bg-purple-light {
+  background-color: #cfb6d9;
+  border-color: #cfb6d9; }
+
+.bg-purple-dark {
+  background-color: #8c368c;
+  border-color: #8c368c; }
+
+.bg-purple-strong {
+  background-color: #8c368c;
+  border-color: #8c368c; }
+
+.bg-purple-strong-light {
+  background-color: #a873af;
+  border-color: #a873af; }
+
+.bg-purple-strong-dark {
+  background-color: #65186a;
+  border-color: #65186a; }
+
+.bg-orchid {
+  background-color: #d47db2;
+  border-color: #d47db2; }
+
+.bg-orchid-light {
+  background-color: #eebcd8;
+  border-color: #eebcd8; }
+
+.bg-orchid-dark {
+  background-color: #cb4793;
+  border-color: #cb4793; }
+
+.bg-orchid-strong {
+  background-color: #cb4793;
+  border-color: #cb4793; }
+
+.bg-orchid-strong-light {
+  background-color: #d47db2;
+  border-color: #d47db2; }
+
+.bg-orchid-strong-dark {
+  background-color: #ca075b;
+  border-color: #ca075b; }
+
+.bg-pink {
+  background-color: #f067ab;
+  border-color: #f067ab; }
+
+.bg-pink-light {
+  background-color: #eebcd8;
+  border-color: #eebcd8; }
+
+.bg-pink-dark {
+  background-color: #e6007e;
+  border-color: #e6007e; }
+
+.bg-magenta {
+  background-color: #ea516b;
+  border-color: #ea516b; }
+
+.bg-magenta-light {
+  background-color: #f9cbca;
+  border-color: #f9cbca; }
+
+.bg-magenta-dark {
+  background-color: #e50050;
+  border-color: #e50050; }
+
+.bg-rose-red {
+  background-color: #ed6c76;
+  border-color: #ed6c76; }
+
+.bg-rose-red-light {
+  background-color: #f39ca2;
+  border-color: #f39ca2; }
+
+.bg-rose-red-dark {
+  background-color: #d72233;
+  border-color: #d72233; }
+
+.bg-rose-red-strong {
+  background-color: #d72233;
+  border-color: #d72233; }
+
+.bg-rose-red-strong-light {
+  background-color: #ed6c76;
+  border-color: #ed6c76; }
+
+.bg-rose-red-strong-dark {
+  background-color: #bf0a2a;
+  border-color: #bf0a2a; }
+
+.bg-red {
+  background-color: #BF0A2A;
+  border-color: #BF0A2A; }
+
+.bg-red-light {
+  background-color: #f8c4bf;
+  border-color: #f8c4bf; }
+
+.bg-red-dark {
+  background-color: #e52721;
+  border-color: #e52721; }
+
+.bg-orange {
+  background-color: #f1894c;
+  border-color: #f1894c; }
+
+.bg-orange-light {
+  background-color: #f9bd95;
+  border-color: #f9bd95; }
+
+.bg-orange-dark {
+  background-color: #f0821a;
+  border-color: #f0821a; }
+
+.bg-orange-strong {
+  background-color: #f0821a;
+  border-color: #f0821a; }
+
+.bg-orange-strong-light {
+  background-color: #f1894c;
+  border-color: #f1894c; }
+
+.bg-orange-strong-dark {
+  background-color: #e94e14;
+  border-color: #e94e14; }
+
+.bg-gold {
+  background-color: #e8c500;
+  border-color: #e8c500; }
+
+.bg-gold-light {
+  background-color: #fdd183;
+  border-color: #fdd183; }
+
+.bg-gold-dark {
+  background-color: #f9b000;
+  border-color: #f9b000; }
+
+.bg-yellow {
+  background-color: #ffe864;
+  border-color: #ffe864; }
+
+.bg-yellow-light {
+  background-color: #ffedaa;
+  border-color: #ffedaa; }
+
+.bg-yellow-dark {
+  background-color: #e5c800;
+  border-color: #e5c800; }
+
+.bg-lime-green {
+  background-color: #b9d36e;
+  border-color: #b9d36e; }
+
+.bg-lime-green-light {
+  background-color: #cfe09b;
+  border-color: #cfe09b; }
+
+.bg-lime-green-dark {
+  background-color: #699329;
+  border-color: #699329; }
+
+.bg-green {
+  background-color: #6fbc85;
+  border-color: #6fbc85; }
+
+.bg-green-light {
+  background-color: #c1dfc4;
+  border-color: #c1dfc4; }
+
+.bg-green-dark {
+  background-color: #009640;
+  border-color: #009640; }
+
+.bg-green-strong {
+  background-color: #009640;
+  border-color: #009640; }
+
+.bg-green-strong-light {
+  background-color: #6fbc85;
+  border-color: #6fbc85; }
+
+.bg-green-strong-dark {
+  background-color: #003f16;
+  border-color: #003f16; }
+
+.bg-sea-green {
+  background-color: #6c9d72;
+  border-color: #6c9d72; }
+
+.bg-sea-green-light {
+  background-color: #bbd1bf;
+  border-color: #bbd1bf; }
+
+.bg-sea-green-dark {
+  background-color: #00743a;
+  border-color: #00743a; }
+
+.bg-sea-green-strong {
+  background-color: #00743a;
+  border-color: #00743a; }
+
+.bg-sea-green-strong-light {
+  background-color: #6c9d72;
+  border-color: #6c9d72; }
+
+.bg-sea-green-strong-dark {
+  background-color: #005722;
+  border-color: #005722; }
+
+.bg-teal {
+  background-color: #31b7bc;
+  border-color: #31b7bc; }
+
+.bg-teal-light {
+  background-color: #8acbc1;
+  border-color: #8acbc1; }
+
+.bg-teal-dark {
+  background-color: #009386;
+  border-color: #009386; }
+
+.bg-blue {
+  background-color: #4eb2e5;
+  border-color: #4eb2e5; }
+
+.bg-blue-light {
+  background-color: #afdff9;
+  border-color: #afdff9; }
+
+.bg-blue-dark {
+  background-color: #00a7e7;
+  border-color: #00a7e7; }
+
+.bg-blue-strong {
+  background-color: #00a7e7;
+  border-color: #00a7e7; }
+
+.bg-blue-strong-light {
+  background-color: #4eb2e5;
+  border-color: #4eb2e5; }
+
+.bg-blue-strong-dark {
+  background-color: #0076b0;
+  border-color: #0076b0; }
+
+.bg-logo-blue {
+  background-color: #00b3f0;
+  border-color: #00b3f0; }
+
+.bg-logo-blue-light {
+  background-color: #0bc1ff;
+  border-color: #0bc1ff; }
+
+.bg-logo-blue-dark {
+  background-color: #4eb2e5;
+  border-color: #4eb2e5; }
+
+.bg-steel-blue {
+  background-color: #007ac3;
+  border-color: #007ac3; }
+
+.bg-steel-blue-light {
+  background-color: #91c8e5;
+  border-color: #91c8e5; }
+
+.bg-steel-blue-dark {
+  background-color: #00649c;
+  border-color: #00649c; }
+
+.bg-steel-blue-dark {
+  background-color: #00649c;
+  border-color: #00649c; }
+
+.bg-steel-blue-dark-light {
+  background-color: #007ac3;
+  border-color: #007ac3; }
+
+.bg-steel-blue-dark-dark {
+  background-color: #003f7d;
+  border-color: #003f7d; }
+
+.bg-gray-darkest {
+  background-color: #494949; }
+
+.bg-gray-dark {
+  background-color: #898989; }
+
+.bg-gray {
+  background-color: #b9b9b9; }
+
+.bg-gray-light {
+  background-color: #c9c9c9; }
+
+.bg-gray-lighter {
+  background-color: #e5e5e5; }
+
+.bg-gray-lightest {
+  background-color: #f3f1f1; }
+
+body.is-tablet-device .glowing {
+  -webkit-animation: none !important;
+          animation: none !important;
+  background-color: rgba(78, 178, 229, 0.6) !important;
+  border-radius: 400px !important; }
+
+.interactive-theme-magic {
+  font-family: 'Twinkl', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  overflow: hidden;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  line-height: 1.15;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+  .interactive-theme-magic .title-btn {
+    background-color: #65186a; }
+  .interactive-theme-magic .introText, .interactive-theme-magic .jodal-title, .interactive-theme-magic .victory-text, .interactive-theme-magic .end-score-number {
+    color: #65186a; }
+  .interactive-theme-magic .font-button .path1:before {
+    color: #65186a; }
+  .interactive-theme-magic .text-button {
+    background-color: #65186a;
+    border-color: #65186a; }
+
+.interactive-large .introText {
+  font-size: 100px; }
+
+.interactive-large .main-screen.character-chooser .character-panel .char-name {
+  font-size: 16px; }
+
+.interactive-large .main-screen.character-chooser .character-panel .char-text {
+  font-size: 14px; }
+
+.interactive-large #dungeon-gameHolder .dungeon-name-text {
+  font-size: 24px; }
+
+.interactive-large #dungeon-gameHolder .dungeon-bubble.difficulty .difficulty-text {
+  font-size: 24px; }
+
+.interactive-large #dungeon-gameHolder .dialogue-banner .dialogue-banner-text {
+  font-size: 20px; }
+
+.interactive-large .dungeon-all-maths .dungeon-maths-holder {
+  font-size: 48px; }
+
+.interactive-large .dungeon-all-maths .dungeon-spell-info {
+  font-size: 26px; }
+
+.interactive-large .dungeon-all-maths .ipad-keypad .keypad-btn.enter {
+  font-size: 36px; }
+
+.interactive-large #dungeon-end-screen {
+  font-size: 30px; }
+  .interactive-large #dungeon-end-screen .dungeon-end-stats .victory-text {
+    font-size: 56px; }
+  .interactive-large #dungeon-end-screen .dungeon-end-stats .end-score {
+    font-size: 52px; }
+
+.jodal > .jodal-back.jodal-custom-back {
+  width: 130%;
+  height: 126%;
+  top: -12%;
+  left: -15%; }
+  .jodal > .jodal-back.jodal-custom-back ~ .font-button.close {
+    top: 4.5%;
+    left: -2.5%; }
+
+.jodal > .jodal-title {
+  font-size: 4.25vw; }
+
+.button-container.top {
+  left: 1.25%;
+  width: auto;
+  height: 10%;
+  font-size: 4vw;
+  position: absolute; }
+  .button-container.top .close {
+    font-size: 4.5vw;
+    margin-right: -2%; }
+  .button-container.top .help {
+    font-size: 4.5vw;
+    margin-right: 1%; }
+
+.button-container.bottom {
+  left: 1.5%;
+  width: 6%;
+  bottom: 1%;
+  position: absolute; }
+  .button-container.bottom .font-button {
+    font-size: 4.5vw; }
+
+.parallax-group {
+  height: 100%; }
+  .parallax-group > .main-screen {
+    top: -5% !important;
+    left: -5% !important;
+    width: 110%;
+    height: 110%; }
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@-webkit-keyframes fall {
+  from {
+    top: -100%; }
+  to {
+    top: 150%; } }
+
+@keyframes fall {
+  from {
+    top: -100%; }
+  to {
+    top: 150%; } }
+
+@-webkit-keyframes sway {
+  from {
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%); }
+  to {
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%); } }
+
+@keyframes sway {
+  from {
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%); }
+  to {
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%); } }
+
+.main-screen {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  .main-screen.title .leaves-frame {
+    top: 0;
+    left: 0; }
+    .main-screen.title .leaves-frame .leaf-swayer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-animation: sway 3.33333s ease-in-out alternate infinite;
+              animation: sway 3.33333s ease-in-out alternate infinite;
+      -webkit-animation: sway 3.66667s ease-in-out alternate infinite;
+              animation: sway 3.66667s ease-in-out alternate infinite;
+      -webkit-animation: sway 4s ease-in-out alternate infinite;
+              animation: sway 4s ease-in-out alternate infinite;
+      -webkit-animation: sway 4.33333s ease-in-out alternate infinite;
+              animation: sway 4.33333s ease-in-out alternate infinite;
+      -webkit-animation: sway 4.66667s ease-in-out alternate infinite;
+              animation: sway 4.66667s ease-in-out alternate infinite;
+      -webkit-animation: sway 5s ease-in-out alternate infinite;
+              animation: sway 5s ease-in-out alternate infinite;
+      -webkit-animation: sway 5.33333s ease-in-out alternate infinite;
+              animation: sway 5.33333s ease-in-out alternate infinite; }
+      .main-screen.title .leaves-frame .leaf-swayer > .leaf {
+        position: absolute;
+        width: 8%;
+        height: 5%; }
+        .main-screen.title .leaves-frame .leaf-swayer > .leaf:nth-child(1) {
+          top: -37%;
+          -webkit-animation: rotate 4.33333s linear infinite, fall 10.33333s infinite linear;
+                  animation: rotate 4.33333s linear infinite, fall 10.33333s infinite linear; }
+        .main-screen.title .leaves-frame .leaf-swayer > .leaf:nth-child(2) {
+          top: -17%;
+          -webkit-animation: rotate 4.66667s linear infinite, fall 10.66667s infinite linear;
+                  animation: rotate 4.66667s linear infinite, fall 10.66667s infinite linear; }
+        .main-screen.title .leaves-frame .leaf-swayer > .leaf:nth-child(3) {
+          top: -25%;
+          -webkit-animation: rotate 5s linear infinite, fall 11s infinite linear;
+                  animation: rotate 5s linear infinite, fall 11s infinite linear; }
+        .main-screen.title .leaves-frame .leaf-swayer > .leaf:nth-child(4) {
+          top: -30%;
+          -webkit-animation: rotate 5.33333s linear infinite, fall 11.33333s infinite linear;
+                  animation: rotate 5.33333s linear infinite, fall 11.33333s infinite linear; }
+        .main-screen.title .leaves-frame .leaf-swayer > .leaf:nth-child(5) {
+          top: -47%;
+          -webkit-animation: rotate 5.66667s linear infinite, fall 11.66667s infinite linear;
+                  animation: rotate 5.66667s linear infinite, fall 11.66667s infinite linear; }
+        .main-screen.title .leaves-frame .leaf-swayer > .leaf:nth-child(6) {
+          top: -21%;
+          -webkit-animation: rotate 6s linear infinite, fall 12s infinite linear;
+                  animation: rotate 6s linear infinite, fall 12s infinite linear; }
+        .main-screen.title .leaves-frame .leaf-swayer > .leaf:nth-child(7) {
+          top: -41%;
+          -webkit-animation: rotate 6.33333s linear infinite, fall 12.33333s infinite linear;
+                  animation: rotate 6.33333s linear infinite, fall 12.33333s infinite linear; }
+  .main-screen.title .titleBtn {
+    position: absolute;
+    left: 40%;
+    bottom: 18%;
+    width: 20% !important; }
+  .main-screen.title .title-logo {
+    position: absolute;
+    height: auto;
+    width: 8%;
+    bottom: 2%;
+    left: 46%; }
+  .main-screen.pause-menu-container.helping-no-buttons .pause-menu .text-button {
+    display: none; }
+  .main-screen.pause-menu-container .pause-menu {
+    top: 3%;
+    height: 94%;
+    padding: 6%; }
+  .main-screen.pause-menu-container .jodal {
+    top: 12%;
+    left: 10%;
+    height: 76%;
+    width: 80%;
+    border-radius: 12px; }
+    .main-screen.pause-menu-container .jodal .jodal-back {
+      display: none; }
+    .main-screen.pause-menu-container .jodal .font-button.close {
+      top: 9%;
+      left: 10%; }
+
+.introText {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  font-size: 8rem;
+  font-size: 8vw;
+  display: inline-block;
+  font-weight: bolder;
+  font-family: 'Twinkl', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  text-shadow: -3px -2px 0 white, -3px -1px 0 white, -3px 0px 0 white, -3px 1px 0 white, -3px 2px 0 white, -2px -3px 0 white, -2px -2px 0 white, -2px -1px 0 white, -2px 0px 0 white, -2px 1px 0 white, -2px 2px 0 white, -2px 3px 0 white, -1px -3px 0 white, -1px -2px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white, -1px 2px 0 white, -1px 3px 0 white, 0px -3px 0 white, 0px -2px 0 white, 0px -1px 0 white, 0px 0px 0 white, 0px 1px 0 white, 0px 2px 0 white, 0px 3px 0 white, 1px -3px 0 white, 1px -2px 0 white, 1px -1px 0 white, 1px 0px 0 white, 1px 1px 0 white, 1px 2px 0 white, 1px 3px 0 white, 2px -3px 0 white, 2px -2px 0 white, 2px -1px 0 white, 2px 0px 0 white, 2px 1px 0 white, 2px 2px 0 white, 2px 3px 0 white, 3px -2px 0 white, 3px -1px 0 white, 3px 0px 0 white, 3px 1px 0 white, 3px 2px 0 white; }
+
+.main-screen.character-chooser {
+  text-align: center;
+  font-size: 3vw;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center; }
+  .main-screen.character-chooser .character-panel {
+    position: relative;
+    width: 98%;
+    padding-bottom: 53%;
+    left: 1%;
+    color: #1c1c1c; }
+    .main-screen.character-chooser .character-panel .character-holder {
+      position: absolute;
+      left: 4.25%;
+      top: 12%;
+      width: 50%;
+      height: 80%;
+      z-index: 2; }
+      .main-screen.character-chooser .character-panel .character-holder .dungeon-char-bubble {
+        position: absolute;
+        display: inline-block;
+        width: 35%;
+        height: 35%;
+        z-index: 3;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+        cursor: pointer; }
+        .main-screen.character-chooser .character-panel .character-holder .dungeon-char-bubble:hover {
+          -webkit-transform: scale(1.1);
+              -ms-transform: scale(1.1);
+                  transform: scale(1.1); }
+        .main-screen.character-chooser .character-panel .character-holder .dungeon-char-bubble:active {
+          -webkit-transform: scale(1.05);
+              -ms-transform: scale(1.05);
+                  transform: scale(1.05); }
+        .main-screen.character-chooser .character-panel .character-holder .dungeon-char-bubble:nth-child(1) {
+          top: 6%;
+          left: 5%; }
+          .main-screen.character-chooser .character-panel .character-holder .dungeon-char-bubble:nth-child(1) .dungeon-char-inner {
+            background-size: 138%; }
+        .main-screen.character-chooser .character-panel .character-holder .dungeon-char-bubble:nth-child(2) {
+          top: 6%;
+          right: 5%; }
+        .main-screen.character-chooser .character-panel .character-holder .dungeon-char-bubble:nth-child(3) {
+          top: 32.5%;
+          right: 32.5%; }
+          .main-screen.character-chooser .character-panel .character-holder .dungeon-char-bubble:nth-child(3) .dungeon-char-inner {
+            background-size: 238%; }
+        .main-screen.character-chooser .character-panel .character-holder .dungeon-char-bubble:nth-child(4) {
+          bottom: 6%;
+          left: 5%; }
+        .main-screen.character-chooser .character-panel .character-holder .dungeon-char-bubble:nth-child(5) {
+          bottom: 6%;
+          right: 5%; }
+        .main-screen.character-chooser .character-panel .character-holder .dungeon-char-bubble .dungeon-char-inner {
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 20.25%;
+          width: 60%;
+          height: 82.5%;
+          border-bottom-left-radius: 400px;
+          border-bottom-right-radius: 400px;
+          background-position: top;
+          background-size: 102%; }
+    .main-screen.character-chooser .character-panel .char-name {
+      position: absolute;
+      top: 3%;
+      right: 15%;
+      width: 15%;
+      color: white;
+      font-size: 1.5vw;
+      text-align: center; }
+    .main-screen.character-chooser .character-panel .char-select-animation {
+      position: absolute;
+      top: 13.5%;
+      right: 10%;
+      width: 25%;
+      height: 40%; }
+      .main-screen.character-chooser .character-panel .char-select-animation canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 100; }
+    .main-screen.character-chooser .character-panel .char-text {
+      position: absolute;
+      right: 8%;
+      bottom: 18%;
+      width: 28.5%;
+      height: 23%;
+      padding: 0.5% 1%;
+      font-size: 1.25vw;
+      text-align: left; }
+    .main-screen.character-chooser .character-panel .char-play {
+      position: absolute;
+      bottom: 6%;
+      right: 15%;
+      width: 15%;
+      height: 10%;
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1);
+      cursor: pointer; }
+      .main-screen.character-chooser .character-panel .char-play:hover {
+        -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+                transform: scale(1.1); }
+      .main-screen.character-chooser .character-panel .char-play:active {
+        -webkit-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+                transform: scale(1.05); }
+
+@-webkit-keyframes clouds-drift {
+  from {
+    background-position-x: 0%; }
+  to {
+    background-position-x: 300%; } }
+
+@keyframes clouds-drift {
+  from {
+    background-position-x: 0%; }
+  to {
+    background-position-x: 300%; } }
+
+#dungeon-map-screen {
+  width: 100%;
+  height: 100%; }
+  #dungeon-map-screen .dungeon-map-clouds {
+    background-repeat: repeat-x;
+    background-size: 300% 100%;
+    background-position: center;
+    -webkit-animation: clouds-drift linear infinite 200s;
+            animation: clouds-drift linear infinite 200s;
+    opacity: 0.8; }
+  #dungeon-map-screen .dungeon-map-bubble {
+    position: absolute;
+    width: 11.5%;
+    padding-bottom: 11.5%;
+    left: 2%;
+    top: 80%;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    cursor: pointer; }
+    #dungeon-map-screen .dungeon-map-bubble:hover {
+      -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+              transform: scale(1.1); }
+    #dungeon-map-screen .dungeon-map-bubble:active {
+      -webkit-transform: scale(1.05);
+          -ms-transform: scale(1.05);
+              transform: scale(1.05); }
+    #dungeon-map-screen .dungeon-map-bubble.castle {
+      top: 18%;
+      left: 8%; }
+    #dungeon-map-screen .dungeon-map-bubble.forest_dark {
+      top: 69%;
+      left: 33%; }
+    #dungeon-map-screen .dungeon-map-bubble.bridge {
+      top: 34%;
+      left: 48%; }
+    #dungeon-map-screen .dungeon-map-bubble.desert {
+      top: 71%;
+      left: 72%; }
+    #dungeon-map-screen .dungeon-map-bubble.flowers {
+      top: 2%;
+      left: 35.5%; }
+    #dungeon-map-screen .dungeon-map-bubble.cave {
+      top: 53.5%;
+      left: 12%; }
+    #dungeon-map-screen .dungeon-map-bubble.forest_light {
+      top: 37%;
+      left: 80%; }
+    #dungeon-map-screen .dungeon-map-bubble.clouds {
+      top: 1.5%;
+      left: 68.5%; }
+    #dungeon-map-screen .dungeon-map-bubble.bubble-character-size {
+      width: 23%;
+      padding-bottom: 23%;
+      -webkit-transform: translate(-30%, -30%);
+          -ms-transform: translate(-30%, -30%);
+              transform: translate(-30%, -30%); }
+  #dungeon-map-screen .dungeon-back-colour {
+    opacity: 0;
+    pointer-events: none;
+    z-index: 200;
+    background-color: #1c1c1c; }
+    #dungeon-map-screen .dungeon-back-colour.dimmed {
+      -webkit-transition: opacity 2s;
+      -o-transition: opacity 2s;
+      transition: opacity 2s;
+      opacity: 1; }
+  #dungeon-map-screen .jodal > .jodal-title {
+    padding-top: 4.5%; }
+
+#dungeon-gameHolder {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  will-change: transform, filter;
+  -webkit-transform: scale(1) translateX(0);
+      -ms-transform: scale(1) translateX(0);
+          transform: scale(1) translateX(0);
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: -webkit-transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  -o-transition: transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95), -webkit-transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+  #dungeon-gameHolder.zoomed {
+    -webkit-transform: scale(1.7) translateX(20%);
+        -ms-transform: scale(1.7) translateX(20%);
+            transform: scale(1.7) translateX(20%); }
+    #dungeon-gameHolder.zoomed .dungeon-player-health, #dungeon-gameHolder.zoomed .hp-text, #dungeon-gameHolder.zoomed .dungeon-progress-tracker, #dungeon-gameHolder.zoomed .dungeon-name-text, #dungeon-gameHolder.zoomed .dungeon-spell-picker, #dungeon-gameHolder.zoomed .dungeon-spell-picker.expanded {
+      opacity: 0; }
+    #dungeon-gameHolder.zoomed .dungeon-back-dimmer {
+      opacity: 0.5; }
+    #dungeon-gameHolder.zoomed ~ .dungeon-spell-timer {
+      opacity: 1; }
+    #dungeon-gameHolder.zoomed ~ .dungeon-fore {
+      opacity: 0; }
+    #dungeon-gameHolder.zoomed ~ .dungeon-ability {
+      opacity: 1;
+      pointer-events: auto; }
+    #dungeon-gameHolder.zoomed ~ .pause-menu-container > .font-button {
+      display: none; }
+  #dungeon-gameHolder.allgrey {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%); }
+  #dungeon-gameHolder.inverted {
+    -webkit-filter: invert(100%);
+            filter: invert(100%); }
+  #dungeon-gameHolder .dungeon-back-dimmer {
+    opacity: 0;
+    -webkit-transition: opacity 350ms;
+    -o-transition: opacity 350ms;
+    transition: opacity 350ms;
+    pointer-events: none;
+    z-index: 45;
+    background-color: #1c1c1c; }
+  #dungeon-gameHolder .dungeon-player-health {
+    position: absolute;
+    width: 20.5%;
+    height: 6%;
+    left: 9.9%;
+    top: 6%;
+    background-color: rgba(28, 28, 28, 0.52);
+    border-radius: 40px;
+    opacity: 1;
+    -webkit-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    transition: opacity 300ms;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    overflow: hidden;
+    z-index: 60; }
+    #dungeon-gameHolder .dungeon-player-health.enemy {
+      left: auto;
+      right: 9.9%; }
+      #dungeon-gameHolder .dungeon-player-health.enemy .player-health-inner {
+        left: auto;
+        right: 0; }
+    #dungeon-gameHolder .dungeon-player-health .player-health-inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: #4eb2e5;
+      -webkit-transition: width 100ms ease-out;
+      -o-transition: width 100ms ease-out;
+      transition: width 100ms ease-out; }
+  #dungeon-gameHolder .hp-text {
+    position: absolute;
+    width: 22%;
+    height: 11%;
+    top: 3.5%;
+    padding-top: .3%;
+    text-align: center;
+    font-family: 'Twinkl', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.5rem;
+    color: white;
+    z-index: 61;
+    opacity: 1;
+    -webkit-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    transition: opacity 300ms; }
+    #dungeon-gameHolder .hp-text.player {
+      right: auto;
+      left: 9%; }
+    #dungeon-gameHolder .hp-text.enemy {
+      left: auto;
+      right: 9%; }
+  #dungeon-gameHolder .dungeon-name-text {
+    position: absolute;
+    top: 14.5%;
+    left: 9%;
+    width: 22%;
+    font-family: 'Twinkl', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2vw;
+    color: white;
+    text-shadow: 2px 2px #1c1c1c;
+    text-align: center;
+    -webkit-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    transition: opacity 300ms;
+    z-index: 61; }
+    #dungeon-gameHolder .dungeon-name-text.enemy-name-text {
+      left: auto;
+      right: 9%; }
+  #dungeon-gameHolder .dungeon-spell-picker {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    position: absolute;
+    z-index: 60;
+    -webkit-transition: width, height, left, bottom, opacity 150ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    -o-transition: width, height, left, bottom, opacity 150ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: width, height, left, bottom, opacity 150ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    left: 21%;
+    height: 5%;
+    width: 1%;
+    bottom: 49%;
+    opacity: 0;
+    pointer-events: none; }
+    #dungeon-gameHolder .dungeon-spell-picker.expanded {
+      -webkit-transition-duration: 600ms;
+           -o-transition-duration: 600ms;
+              transition-duration: 600ms;
+      left: 37%;
+      height: 75%;
+      width: 10%;
+      bottom: 5%;
+      opacity: 1;
+      pointer-events: auto; }
+  #dungeon-gameHolder .dungeon-level-picker {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    position: absolute;
+    z-index: 60;
+    -webkit-transition: width, height, left, bottom, opacity 150ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    -o-transition: width, height, left, bottom, opacity 150ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: width, height, left, bottom, opacity 150ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    width: 1%;
+    height: 5%;
+    left: 20%;
+    bottom: 49%;
+    opacity: 0;
+    pointer-events: none; }
+    #dungeon-gameHolder .dungeon-level-picker.expanded {
+      -webkit-transition-duration: 600ms;
+           -o-transition-duration: 600ms;
+              transition-duration: 600ms;
+      width: 25%;
+      height: 70%;
+      left: 40%;
+      bottom: 10%;
+      opacity: 1;
+      pointer-events: auto; }
+      #dungeon-gameHolder .dungeon-level-picker.expanded .spell-back-btn {
+        opacity: 1;
+        pointer-events: auto; }
+      #dungeon-gameHolder .dungeon-level-picker.expanded .difficulty-text-inner {
+        -webkit-transition-duration: 1s;
+             -o-transition-duration: 1s;
+                transition-duration: 1s;
+        opacity: 1 !important; }
+    #dungeon-gameHolder .dungeon-level-picker .spell-back-btn {
+      position: absolute;
+      left: -25%;
+      top: 42%;
+      opacity: 0;
+      pointer-events: none;
+      -webkit-transition: opacity 300ms ease-out;
+      -o-transition: opacity 300ms ease-out;
+      transition: opacity 300ms ease-out;
+      -webkit-transition-delay: 300ms;
+           -o-transition-delay: 300ms;
+              transition-delay: 300ms; }
+  #dungeon-gameHolder .dungeon-bubble {
+    position: relative;
+    height: 18%;
+    width: 100%;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    cursor: pointer; }
+    #dungeon-gameHolder .dungeon-bubble:hover {
+      -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+              transform: scale(1.1); }
+    #dungeon-gameHolder .dungeon-bubble:active {
+      -webkit-transform: scale(1.05);
+          -ms-transform: scale(1.05);
+              transform: scale(1.05); }
+    #dungeon-gameHolder .dungeon-bubble.difficulty {
+      height: 32%;
+      width: 100%;
+      text-align: center; }
+      #dungeon-gameHolder .dungeon-bubble.difficulty .difficulty-text {
+        position: absolute;
+        top: 13%;
+        left: 33%;
+        width: 55%;
+        height: 70%;
+        font-size: 2vw; }
+        #dungeon-gameHolder .dungeon-bubble.difficulty .difficulty-text .difficulty-text-inner {
+          width: 100%;
+          text-align: center;
+          -webkit-transition: opacity 1.3s ease-in;
+          -o-transition: opacity 1.3s ease-in;
+          transition: opacity 1.3s ease-in;
+          opacity: 0; }
+      #dungeon-gameHolder .dungeon-bubble.difficulty img {
+        max-width: 100%;
+        max-height: 100%; }
+    #dungeon-gameHolder .dungeon-bubble img {
+      max-width: 100%;
+      max-height: 100%; }
+  #dungeon-gameHolder .dungeon-spell-impact {
+    display: none;
+    position: absolute;
+    height: 40%;
+    width: 20%;
+    right: 10%;
+    bottom: 20%;
+    z-index: 200; }
+  #dungeon-gameHolder .dungeon-stress {
+    display: none;
+    position: absolute;
+    height: 25%;
+    width: 15%;
+    left: 22%;
+    top: 18%; }
+  #dungeon-gameHolder .dungeon-spell-damage {
+    display: none;
+    position: absolute;
+    height: 10%;
+    width: 20%;
+    right: 12%;
+    top: 25%;
+    font-size: 7vw;
+    text-align: center;
+    text-shadow: 1.5px 1.5px white; }
+  #dungeon-gameHolder .dungeon-spell-body {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    height: 2%;
+    width: 1%;
+    z-index: 75; }
+  #dungeon-gameHolder .dungeon-weakness-icon {
+    position: absolute;
+    height: 10%;
+    width: 8%;
+    right: 2%;
+    top: 25%;
+    -webkit-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    transition: opacity 300ms;
+    z-index: 75; }
+    #dungeon-gameHolder .dungeon-weakness-icon.resist {
+      top: 36%; }
+  #dungeon-gameHolder .dialogue-banner {
+    position: absolute;
+    width: 50%;
+    height: 25%;
+    left: 25%;
+    bottom: -25%;
+    -webkit-transition: bottom 0.5s;
+    -o-transition: bottom 0.5s;
+    transition: bottom 0.5s;
+    z-index: 61; }
+    #dungeon-gameHolder .dialogue-banner.dialogue-open {
+      bottom: 1%; }
+    #dungeon-gameHolder .dialogue-banner .dialogue-banner-text {
+      position: absolute;
+      width: 58%;
+      height: 80%;
+      right: 10%;
+      top: 20%;
+      padding: 1%;
+      font-size: 1.6vw;
+      color: #1c1c1c; }
+
+.dungeon-fore {
+  z-index: 60;
+  opacity: 1;
+  -webkit-transition: opacity 100ms;
+  -o-transition: opacity 100ms;
+  transition: opacity 100ms; }
+
+canvas {
+  z-index: 50;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: scale(1) translateX(0);
+      -ms-transform: scale(1) translateX(0);
+          transform: scale(1) translateX(0);
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: -webkit-transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  -o-transition: transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95), -webkit-transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+  canvas#character-canvas {
+    left: 0; }
+  canvas.zoomed {
+    -webkit-transform: scale(1.7) translateX(20%);
+        -ms-transform: scale(1.7) translateX(20%);
+            transform: scale(1.7) translateX(20%); }
+
+.dungeon-friend {
+  position: absolute;
+  opacity: 0;
+  height: 35%;
+  width: 20%;
+  right: 10%;
+  top: 45%; }
+  .dungeon-friend.exiting {
+    -webkit-animation: friend-exit 1100ms ease;
+            animation: friend-exit 1100ms ease; }
+  .dungeon-friend.friend-happy {
+    opacity: 1;
+    -webkit-animation: friend-happy-y 0.5s infinite linear, friend-happy-x 3s infinite linear;
+            animation: friend-happy-y 0.5s infinite linear, friend-happy-x 3s infinite linear;
+    top: auto;
+    bottom: 5%;
+    right: auto;
+    z-index: 51; }
+
+@-webkit-keyframes friend-exit {
+  0% {
+    top: 45%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 1; }
+  60% {
+    top: 38%;
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+    opacity: 1; }
+  99% {
+    top: 140%;
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+    opacity: 1; }
+  100% {
+    top: 140%;
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+    opacity: 0; } }
+
+@keyframes friend-exit {
+  0% {
+    top: 45%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 1; }
+  60% {
+    top: 38%;
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+    opacity: 1; }
+  99% {
+    top: 140%;
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+    opacity: 1; }
+  100% {
+    top: 140%;
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+    opacity: 0; } }
+
+@-webkit-keyframes friend-happy-x {
+  0% {
+    left: 10%;
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1); }
+  25% {
+    left: 50%;
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1); }
+  50% {
+    left: 80%;
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1); }
+  75% {
+    left: 50%;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1); }
+  100% {
+    left: 10%;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1); } }
+
+@keyframes friend-happy-x {
+  0% {
+    left: 10%;
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1); }
+  25% {
+    left: 50%;
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1); }
+  50% {
+    left: 80%;
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1); }
+  75% {
+    left: 50%;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1); }
+  100% {
+    left: 10%;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1); } }
+
+@-webkit-keyframes friend-happy-y {
+  0% {
+    margin-bottom: 0; }
+  50% {
+    margin-bottom: 5%; }
+  100% {
+    margin-bottom: 0; } }
+
+@keyframes friend-happy-y {
+  0% {
+    margin-bottom: 0; }
+  50% {
+    margin-bottom: 5%; }
+  100% {
+    margin-bottom: 0; } }
+
+@-webkit-keyframes trumpets-left {
+  0% {
+    -webkit-transform: translateX(-100%) rotate(0);
+            transform: translateX(-100%) rotate(0); }
+  11% {
+    -webkit-transform: translateX(0) rotate(-6deg);
+            transform: translateX(0) rotate(-6deg); }
+  15% {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0); }
+  18% {
+    -webkit-transform: translateX(-15%) rotate(0);
+            transform: translateX(-15%) rotate(0); }
+  21% {
+    -webkit-transform: translateX(0) rotate(6deg);
+            transform: translateX(0) rotate(6deg); }
+  24% {
+    -webkit-transform: translateX(-15%) rotate(-6deg);
+            transform: translateX(-15%) rotate(-6deg); }
+  30% {
+    -webkit-transform: translateX(0) rotate(-6deg);
+            transform: translateX(0) rotate(-6deg); }
+  33% {
+    -webkit-transform: translateX(-15%) rotate(0);
+            transform: translateX(-15%) rotate(0); }
+  38% {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0); }
+  45% {
+    -webkit-transform: translateX(-15%) rotate(6deg);
+            transform: translateX(-15%) rotate(6deg); }
+  74% {
+    -webkit-transform: translateX(0) rotate(-6deg);
+            transform: translateX(0) rotate(-6deg); }
+  78% {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0); }
+  90% {
+    -webkit-transform: translateX(-100%) rotate(0);
+            transform: translateX(-100%) rotate(0); }
+  100% {
+    -webkit-transform: translateX(-100%) rotate(0);
+            transform: translateX(-100%) rotate(0); } }
+
+@keyframes trumpets-left {
+  0% {
+    -webkit-transform: translateX(-100%) rotate(0);
+            transform: translateX(-100%) rotate(0); }
+  11% {
+    -webkit-transform: translateX(0) rotate(-6deg);
+            transform: translateX(0) rotate(-6deg); }
+  15% {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0); }
+  18% {
+    -webkit-transform: translateX(-15%) rotate(0);
+            transform: translateX(-15%) rotate(0); }
+  21% {
+    -webkit-transform: translateX(0) rotate(6deg);
+            transform: translateX(0) rotate(6deg); }
+  24% {
+    -webkit-transform: translateX(-15%) rotate(-6deg);
+            transform: translateX(-15%) rotate(-6deg); }
+  30% {
+    -webkit-transform: translateX(0) rotate(-6deg);
+            transform: translateX(0) rotate(-6deg); }
+  33% {
+    -webkit-transform: translateX(-15%) rotate(0);
+            transform: translateX(-15%) rotate(0); }
+  38% {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0); }
+  45% {
+    -webkit-transform: translateX(-15%) rotate(6deg);
+            transform: translateX(-15%) rotate(6deg); }
+  74% {
+    -webkit-transform: translateX(0) rotate(-6deg);
+            transform: translateX(0) rotate(-6deg); }
+  78% {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0); }
+  90% {
+    -webkit-transform: translateX(-100%) rotate(0);
+            transform: translateX(-100%) rotate(0); }
+  100% {
+    -webkit-transform: translateX(-100%) rotate(0);
+            transform: translateX(-100%) rotate(0); } }
+
+@-webkit-keyframes trumpets-right {
+  0% {
+    -webkit-transform: translateX(100%) rotate(0);
+            transform: translateX(100%) rotate(0); }
+  11% {
+    -webkit-transform: translateX(0) rotate(6deg);
+            transform: translateX(0) rotate(6deg); }
+  15% {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0); }
+  18% {
+    -webkit-transform: translateX(15%) rotate(0);
+            transform: translateX(15%) rotate(0); }
+  21% {
+    -webkit-transform: translateX(0) rotate(-6deg);
+            transform: translateX(0) rotate(-6deg); }
+  24% {
+    -webkit-transform: translateX(15%) rotate(6deg);
+            transform: translateX(15%) rotate(6deg); }
+  30% {
+    -webkit-transform: translateX(0) rotate(6deg);
+            transform: translateX(0) rotate(6deg); }
+  33% {
+    -webkit-transform: translateX(15%) rotate(0);
+            transform: translateX(15%) rotate(0); }
+  38% {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0); }
+  45% {
+    -webkit-transform: translateX(15%) rotate(-6deg);
+            transform: translateX(15%) rotate(-6deg); }
+  74% {
+    -webkit-transform: translateX(0) rotate(6deg);
+            transform: translateX(0) rotate(6deg); }
+  78% {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0); }
+  90% {
+    -webkit-transform: translateX(100%) rotate(0);
+            transform: translateX(100%) rotate(0); }
+  100% {
+    -webkit-transform: translateX(100%) rotate(0);
+            transform: translateX(100%) rotate(0); } }
+
+@keyframes trumpets-right {
+  0% {
+    -webkit-transform: translateX(100%) rotate(0);
+            transform: translateX(100%) rotate(0); }
+  11% {
+    -webkit-transform: translateX(0) rotate(6deg);
+            transform: translateX(0) rotate(6deg); }
+  15% {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0); }
+  18% {
+    -webkit-transform: translateX(15%) rotate(0);
+            transform: translateX(15%) rotate(0); }
+  21% {
+    -webkit-transform: translateX(0) rotate(-6deg);
+            transform: translateX(0) rotate(-6deg); }
+  24% {
+    -webkit-transform: translateX(15%) rotate(6deg);
+            transform: translateX(15%) rotate(6deg); }
+  30% {
+    -webkit-transform: translateX(0) rotate(6deg);
+            transform: translateX(0) rotate(6deg); }
+  33% {
+    -webkit-transform: translateX(15%) rotate(0);
+            transform: translateX(15%) rotate(0); }
+  38% {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0); }
+  45% {
+    -webkit-transform: translateX(15%) rotate(-6deg);
+            transform: translateX(15%) rotate(-6deg); }
+  74% {
+    -webkit-transform: translateX(0) rotate(6deg);
+            transform: translateX(0) rotate(6deg); }
+  78% {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0); }
+  90% {
+    -webkit-transform: translateX(100%) rotate(0);
+            transform: translateX(100%) rotate(0); }
+  100% {
+    -webkit-transform: translateX(100%) rotate(0);
+            transform: translateX(100%) rotate(0); } }
+
+@-webkit-keyframes confetti-left {
+  0% {
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+    top: -10%; }
+  50% {
+    -webkit-transform: translateX(350%) rotate(180deg);
+            transform: translateX(350%) rotate(180deg);
+    top: 50%; }
+  100% {
+    -webkit-transform: translateX(0%) rotate(360deg);
+            transform: translateX(0%) rotate(360deg);
+    top: 110%; } }
+
+@keyframes confetti-left {
+  0% {
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+    top: -10%; }
+  50% {
+    -webkit-transform: translateX(350%) rotate(180deg);
+            transform: translateX(350%) rotate(180deg);
+    top: 50%; }
+  100% {
+    -webkit-transform: translateX(0%) rotate(360deg);
+            transform: translateX(0%) rotate(360deg);
+    top: 110%; } }
+
+@-webkit-keyframes confetti-right {
+  0% {
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+    top: -10%; }
+  50% {
+    -webkit-transform: translateX(-350%) rotate(-180deg);
+            transform: translateX(-350%) rotate(-180deg);
+    top: 50%; }
+  100% {
+    -webkit-transform: translateX(0%) rotate(-360deg);
+            transform: translateX(0%) rotate(-360deg);
+    top: 110%; } }
+
+@keyframes confetti-right {
+  0% {
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+    top: -10%; }
+  50% {
+    -webkit-transform: translateX(-350%) rotate(-180deg);
+            transform: translateX(-350%) rotate(-180deg);
+    top: 50%; }
+  100% {
+    -webkit-transform: translateX(0%) rotate(-360deg);
+            transform: translateX(0%) rotate(-360deg);
+    top: 110%; } }
+
+#dungeon-particle-holder {
+  pointer-events: none;
+  z-index: 70; }
+  #dungeon-particle-holder canvas {
+    width: 100% !important;
+    height: auto !important; }
+
+.dungeon-spell-timer {
+  position: absolute;
+  width: 97%;
+  height: 7%;
+  right: 1.5%;
+  top: 1.5%;
+  border: 3px solid grey;
+  border-radius: 10px;
+  background-color: rgba(28, 28, 28, 0.6);
+  opacity: 0;
+  -webkit-transition: opacity 300ms;
+  -o-transition: opacity 300ms;
+  transition: opacity 300ms; }
+  .dungeon-spell-timer .spell-timer-inner {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 6px;
+    background-color: #f1894c;
+    -webkit-transition: width 300ms;
+    -o-transition: width 300ms;
+    transition: width 300ms; }
+
+.dungeon-all-maths {
+  position: absolute;
+  width: 42%;
+  top: 11%;
+  left: 53%;
+  height: auto;
+  max-height: 82%;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity 300ms;
+  -o-transition: opacity 300ms;
+  transition: opacity 300ms; }
+  .dungeon-all-maths.all-maths-visible {
+    -webkit-transition: opacity 400ms;
+    -o-transition: opacity 400ms;
+    transition: opacity 400ms;
+    pointer-events: auto;
+    opacity: 1; }
+  .dungeon-all-maths.character-question-ability .dungeon-maths-holder {
+    left: auto;
+    margin-right: 0;
+    margin-left: 15%; }
+    .dungeon-all-maths.character-question-ability .dungeon-maths-holder.question-area {
+      width: 80%;
+      left: auto; }
+  .dungeon-all-maths.character-question-ability .dungeon-spell-info {
+    width: 80%;
+    left: auto;
+    margin-right: 0;
+    margin-left: 15%; }
+  .dungeon-all-maths.character-question-ability .ipad-keypad {
+    margin-left: 27%; }
+  .dungeon-all-maths .dungeon-maths-holder {
+    position: relative;
+    height: 30%;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+    color: white;
+    font-size: 4.5vw;
+    text-align: center;
+    font-family: 'Twinkl', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-style: normal; }
+    .dungeon-all-maths .dungeon-maths-holder.question-area {
+      margin-top: 9%;
+      width: 100%;
+      left: 0; }
+    .dungeon-all-maths .dungeon-maths-holder.input-area {
+      top: 30%;
+      background-color: transparent;
+      text-align: center;
+      margin-top: 4%; }
+      .dungeon-all-maths .dungeon-maths-holder.input-area input[type=number] {
+        width: 65%;
+        border: none;
+        border-radius: 4px;
+        background-color: white;
+        color: #65186a;
+        text-align: center;
+        font-family: 'Twinkl', Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-style: normal; }
+  .dungeon-all-maths .dungeon-spell-info {
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin-bottom: 9%;
+    text-align: center;
+    font-size: 2.5vw;
+    color: white; }
+  .dungeon-all-maths .ipad-keypad {
+    width: 56%;
+    height: 47%;
+    max-height: 47%;
+    margin: 1% auto;
+    background-color: transparent;
+    vertical-align: initial; }
+    .dungeon-all-maths .ipad-keypad img {
+      display: inline-block;
+      position: relative;
+      width: 29%;
+      height: auto !important;
+      min-height: auto;
+      max-height: 25%;
+      margin: 2% auto;
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1);
+      cursor: pointer; }
+      .dungeon-all-maths .ipad-keypad img:hover {
+        -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+                transform: scale(1.1); }
+      .dungeon-all-maths .ipad-keypad img:active {
+        -webkit-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+                transform: scale(1.05); }
+    .dungeon-all-maths .ipad-keypad .keypad-btn {
+      display: inline-block;
+      height: 0;
+      padding-bottom: 22%; }
+      .dungeon-all-maths .ipad-keypad .keypad-btn.enter {
+        font-size: 1.9vw; }
+  .dungeon-all-maths .dungeon-question-ability {
+    position: absolute;
+    top: 39%;
+    left: 0;
+    width: 30%;
+    height: 18%; }
+    .dungeon-all-maths .dungeon-question-ability.ability-used {
+      opacity: 0.5;
+      pointer-events: none; }
+
+.dungeon-ability {
+  display: none;
+  position: absolute;
+  width: 10%;
+  height: 20%;
+  top: 41%;
+  left: 55%;
+  z-index: 100;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: opacity 300ms;
+  -o-transition: opacity 300ms;
+  transition: opacity 300ms; }
+
+.dungeon-progress-tracker {
+  position: absolute;
+  width: 32%;
+  padding-bottom: 6%;
+  top: 3.5%;
+  left: 34%;
+  opacity: 1;
+  -webkit-transition: opacity 300ms;
+  -o-transition: opacity 300ms;
+  transition: opacity 300ms;
+  z-index: 60; }
+  .dungeon-progress-tracker .dungeon-progress-arrows {
+    position: absolute;
+    width: 7%;
+    padding-bottom: 22%;
+    top: -10%;
+    left: 2%;
+    -webkit-transition: left 600ms;
+    -o-transition: left 600ms;
+    transition: left 600ms; }
+  .dungeon-progress-tracker .dungeon-progress-miniboss, .dungeon-progress-tracker .dungeon-progress-boss {
+    position: absolute; }
+  .dungeon-progress-tracker .dungeon-progress-miniboss {
+    top: 32%;
+    left: 35.75%;
+    height: 40%;
+    width: 7%; }
+  .dungeon-progress-tracker .dungeon-progress-boss {
+    top: 16%;
+    right: 4%;
+    height: 68%;
+    width: 10%; }
+  .dungeon-progress-tracker .dungeon-progress-dot {
+    position: absolute;
+    top: 39%;
+    width: 0;
+    padding-bottom: 4.5%;
+    background-color: transparent;
+    border-radius: 50px;
+    -webkit-transition: width 600ms, background-color 600ms;
+    -o-transition: width 600ms, background-color 600ms;
+    transition: width 600ms, background-color 600ms; }
+    .dungeon-progress-tracker .dungeon-progress-dot:nth-child(4) {
+      top: 25%;
+      padding-bottom: 10%;
+      border-radius: 75px; }
+    .dungeon-progress-tracker .dungeon-progress-dot:nth-child(8) {
+      top: 11%;
+      padding-bottom: 14.5%;
+      border-radius: 100px; }
+    .dungeon-progress-tracker .dungeon-progress-dot.progress-filled {
+      background-color: #a873af;
+      width: 4.5%; }
+      .dungeon-progress-tracker .dungeon-progress-dot.progress-filled.progress-current {
+        background-color: white; }
+      .dungeon-progress-tracker .dungeon-progress-dot.progress-filled:nth-child(4) {
+        width: 10%; }
+      .dungeon-progress-tracker .dungeon-progress-dot.progress-filled:nth-child(8) {
+        width: 14.5%; }
+
+#dungeon-end-screen {
+  text-align: center;
+  font-size: 2.5vw; }
+  #dungeon-end-screen .dungeon-end-stats {
+    position: absolute;
+    width: 70%;
+    height: 88%;
+    padding: 8%;
+    left: 15%;
+    bottom: 6%;
+    border-radius: 10px;
+    color: #1c1c1c;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    z-index: 60; }
+    #dungeon-end-screen .dungeon-end-stats ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0; }
+    #dungeon-end-screen .dungeon-end-stats .font-button.close {
+      display: inline-block;
+      position: absolute;
+      top: 15%;
+      left: 10%; }
+    #dungeon-end-screen .dungeon-end-stats .victory-text {
+      font-weight: bold;
+      font-size: 5vw; }
+    #dungeon-end-screen .dungeon-end-stats .stats-holder {
+      margin: 1%; }
+    #dungeon-end-screen .dungeon-end-stats .end-score {
+      font-size: 5vw; }
+      #dungeon-end-screen .dungeon-end-stats .end-score .end-score-number {
+        font-weight: bold; }
+    #dungeon-end-screen .dungeon-end-stats .text-button {
+      padding: 1% 2%;
+      margin-top: 1%;
+      width: 38%; }
+  #dungeon-end-screen.final-end-screen .dungeon-final-end-screen-fore {
+    pointer-events: none;
+    z-index: 60; }
+    #dungeon-end-screen.final-end-screen .dungeon-final-end-screen-fore .dungeon-final-end-screen-areas {
+      position: absolute;
+      width: 14%;
+      height: 86%;
+      top: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      pointer-events: auto; }
+      #dungeon-end-screen.final-end-screen .dungeon-final-end-screen-fore .dungeon-final-end-screen-areas:first-child {
+        left: 1.75%; }
+      #dungeon-end-screen.final-end-screen .dungeon-final-end-screen-fore .dungeon-final-end-screen-areas:last-child {
+        right: 1.75%; }
+      #dungeon-end-screen.final-end-screen .dungeon-final-end-screen-fore .dungeon-final-end-screen-areas .dungeon-final-end-screen-bubble {
+        position: relative;
+        width: 75%;
+        padding-bottom: 75%;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+        cursor: pointer; }
+        #dungeon-end-screen.final-end-screen .dungeon-final-end-screen-fore .dungeon-final-end-screen-areas .dungeon-final-end-screen-bubble:hover {
+          -webkit-transform: scale(1.1);
+              -ms-transform: scale(1.1);
+                  transform: scale(1.1); }
+        #dungeon-end-screen.final-end-screen .dungeon-final-end-screen-fore .dungeon-final-end-screen-areas .dungeon-final-end-screen-bubble:active {
+          -webkit-transform: scale(1.05);
+              -ms-transform: scale(1.05);
+                  transform: scale(1.05); }
+  #dungeon-end-screen .victory-trumpets {
+    z-index: 61; }
+    #dungeon-end-screen .victory-trumpets.trumpets-sounding .victory-trumpet.left {
+      -webkit-animation: trumpets-left 1 4.2s linear !important;
+              animation: trumpets-left 1 4.2s linear !important; }
+    #dungeon-end-screen .victory-trumpets.trumpets-sounding .victory-trumpet.right {
+      -webkit-animation: trumpets-right 1 4.2s linear !important;
+              animation: trumpets-right 1 4.2s linear !important; }
+    #dungeon-end-screen .victory-trumpets .victory-trumpet {
+      position: absolute;
+      width: 27%;
+      height: 32%;
+      -webkit-animation: none;
+              animation: none; }
+      #dungeon-end-screen .victory-trumpets .victory-trumpet.top {
+        top: 10%; }
+      #dungeon-end-screen .victory-trumpets .victory-trumpet.bottom {
+        bottom: 10%; }
+      #dungeon-end-screen .victory-trumpets .victory-trumpet.left {
+        left: 0;
+        -webkit-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+                transform: translateX(-100%); }
+      #dungeon-end-screen .victory-trumpets .victory-trumpet.right {
+        right: 0;
+        -webkit-transform: translateX(100%);
+            -ms-transform: translateX(100%);
+                transform: translateX(100%); }
+  #dungeon-end-screen .confetti {
+    position: absolute;
+    top: -10%;
+    padding: 1%;
+    -webkit-transform: translateX(0%) rotate(0deg);
+        -ms-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+    -webkit-animation: confetti-left 10s infinite linear;
+            animation: confetti-left 10s infinite linear;
+    background: #4eb2e5;
+    border-radius: 4px; }
+    #dungeon-end-screen .confetti:nth-child(2n) {
+      -webkit-animation-name: confetti-right;
+              animation-name: confetti-right;
+      background: #f1894c; }
+    #dungeon-end-screen .confetti:nth-child(3n) {
+      background: #a873af; }
+    #dungeon-end-screen .confetti:nth-child(4n) {
+      background: #6fbc85; }
+    #dungeon-end-screen .confetti:nth-child(5n) {
+      background: #ffe864; }
+
+.twinkl-logo {
+  position: absolute;
+  height: auto;
+  width: 5%;
+  bottom: 1%;
+  right: 1%;
+  opacity: .35; }
+
+.button-container {
+  z-index: 101; }
